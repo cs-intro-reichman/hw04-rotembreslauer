@@ -24,8 +24,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(allIndexOf("MMMM",'M')));
-        
+    System.out.println(capVowelsLowRest("One two tHRee world"));        
     }
 
     public static String capVowelsLowRest (String string) {
@@ -46,7 +45,7 @@ public class StringOps {
                 case 'I':
                 case 'O':
                 case 'U':
-                newString = newString + (char)(currentChar + 32);
+                newString = newString + currentChar;
                 break;
             default:
                 if (currentChar >= 'B' && currentChar <= 'Z'){

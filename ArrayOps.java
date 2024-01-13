@@ -1,8 +1,9 @@
 public class ArrayOps {
     public static void main(String[] args) {
 
-        int array[] = {-202, 48, 13, 7, 8};
-        System.out.println(secondMaxValue(array));
+        int array[] = {1,2,3,-4,5};
+        int array1[] = {1,3,-4,5};
+        System.out.println(containsTheSameElements(array, array1));
        
      }
     public static int findMissingInt (int [] array) {
@@ -61,6 +62,11 @@ public class ArrayOps {
                     return false;
                 }  
           }
+          for (int i = 0; i < array1.length; i ++){ 
+            if(!(inArray(array2, array1[i]))){   
+                return false;
+            }
+        }
        return true;
         }
 
