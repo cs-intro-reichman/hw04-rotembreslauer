@@ -1,26 +1,89 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        
-    }
-    
+
+        int array[] = {-202, 48, 13, 7, 8};
+        System.out.println(secondMaxValue(array));
+       
+     }
     public static int findMissingInt (int [] array) {
-        // Write your code here:
-        return -1;
-    }
+        int n = array.length;
+        int sum = 0;
+        int fullSum = 0;
+
+        for (int i = 0; i < n; i ++){ //give the full sum
+            sum = sum + array[i]; 
+        }
+        for(int i = 0; i < n + 1; i++){ //array sum
+            fullSum = fullSum + i;
+        }
+         int missingValue = fullSum - sum;
+
+           return missingValue;
+         }
+      
+    
 
     public static int secondMaxValue(int [] array) {
-        // Write your code here:
-        return 0;
+        
+        int n = array.length;
+        int max1 = 0; 
+        int max2 = 0; 
+
+        for(int i = 0; i < n; i ++){
+            if (array[i] > max1){
+                max1 = array[i]; // max of the array
+            } 
+        }
+        for(int i = 0; i < n; i ++){
+            if((array[i] > max2) && (array[i] < max1)){
+                max2 = array[i]; // second max of array
+            }
+        }
+        return max2;
     }
 
-    public static boolean containsTheSameElements(int [] array1,int [] array2) {
-        // Write your code here:
+
+    public static boolean inArray(int [] array, int num) {
+
+        for(int i = 0; i < array.length; i++){
+
+            if((array[i] == num)){
+
+                return true;
+            }
+        }
         return false;
     }
+    public static boolean containsTheSameElements(int [] array1,int [] array2) {
+
+            for (int i = 0; i < array2.length; i ++){ 
+                if(!(inArray(array1, array2[i]))){   
+                    return false;
+                }  
+          }
+       return true;
+        }
 
     public static boolean isSorted(int [] array) {
-        // Write your code here:
-        return false;
-    }
 
+        int n = array.length;
+        boolean increasing = false;
+        boolean decreasing = false;
+
+        for (int i = 1; i < n; i ++){
+            if(array[i] > array[i-1]){ //chek if increasing
+                increasing = true;
+            }
+            if(array[i] < array[i-1]){ //chek if decreasing
+                decreasing = true;
+            }
+        }
+           if (decreasing && increasing){
+                return false;
+            }
+        return true;
+    }
 }
+         
+
+
