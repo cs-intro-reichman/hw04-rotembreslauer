@@ -11,12 +11,14 @@ public class ArrayOps {
         int sum = 0;
         int fullSum = 0;
 
+        // #feedback - you can have one for loop and update sum and fullSum together.
         for (int i = 0; i < n; i ++){ //give the full sum
             sum = sum + array[i]; 
         }
         for(int i = 0; i < n + 1; i++){ //array sum
             fullSum = fullSum + i;
         }
+        // #feedback - you can return fullSum - sum, no need to declare missingValue variable.
          int missingValue = fullSum - sum;
 
            return missingValue;
@@ -60,6 +62,7 @@ public class ArrayOps {
 
     public static boolean inArray(int [] array, int num) {
 
+        // #feedback - please note the correct indentation throughout the file.
         for(int i = 0; i < array.length; i++){
 
             if((array[i] == num)){
